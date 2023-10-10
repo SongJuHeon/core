@@ -20,7 +20,6 @@ public class ComponentFilterAppConfigTest {
         BeanA beanA = ac.getBean("beanA", BeanA.class);
         Assertions.assertThat(beanA).isNotNull();
 
-        BeanB beanB = ac.getBean("beanB", BeanB.class);
         assertThrows(
                 NoSuchBeanDefinitionException.class,
                 () -> ac.getBean("beanB", BeanB.class));
@@ -29,7 +28,7 @@ public class ComponentFilterAppConfigTest {
     @Configuration
     @ComponentScan(
             includeFilters = @Filter(type = FilterType.ANNOTATION, classes = MyIncldueComponent.class),
-            excludeFilters = @Filter(type = FilterType.ANNOTATION, classes = MyExcldueComponent.class))
+            excludeFilters = @Filter(type = FilterType.ANNOTATION, classes = MyExcludeComponent.class))
     static class ComponentFilterAppConfig {
 
     }

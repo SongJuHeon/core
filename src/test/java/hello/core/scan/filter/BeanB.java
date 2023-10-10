@@ -1,5 +1,5 @@
 package hello.core.scan.filter;
 
-@MyExcldueComponent
+@MyExcludeComponent
 public class BeanB {
 }
